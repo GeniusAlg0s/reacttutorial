@@ -24,7 +24,7 @@ class Square extends React.Component {
         <div>
           <div className="status">{status}</div>
           <div className="board-row">
-            this.renderSquare(0)
+            {this.renderSquare(0)}
             {this.renderSquare(1)}
             {this.renderSquare(2)}
           </div>
@@ -68,6 +68,29 @@ class Square extends React.Component {
       );
     }
   }
+  const { Menu, Dropdown, Icon } = antd;
+
+const menu = (
+  <Menu>
+    <Menu.Item key="0">
+      <a href="http://www.alipay.com/">1st menu item</a>
+    </Menu.Item>
+    <Menu.Item key="1">
+      <a href="http://www.taobao.com/">2nd menu item</a>
+    </Menu.Item>
+    <Menu.Divider />
+    <Menu.Item key="3">3rd menu item</Menu.Item>
+  </Menu>
+);
+
+ReactDOM.render(
+  <Dropdown overlay={menu} trigger={['click']}>
+    <a className="ant-dropdown-link" href="#">
+      Click me <Icon type="down" />
+    </a>
+  </Dropdown>,
+  mountNode,
+);
   
   // ========================================
   
